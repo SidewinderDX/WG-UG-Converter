@@ -13,7 +13,7 @@ It will create one file called *index.json* and one folder called *regions*. Cop
 **As always BACKUP the server before changing anything**
 
 Known Bugs:
-* Problems with child protections
+
 
 Links to UniverseGuard
 * https://ore.spongepowered.org/Francesco_Jimi/Universe-Guard
