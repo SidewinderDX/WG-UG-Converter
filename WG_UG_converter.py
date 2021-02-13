@@ -100,8 +100,8 @@ if __name__== "__main__":
                     "USERNAME" : "",
                     "ROLE" : "MEMBER"
                 }
-                newOner["UUID"] = member
-                newOner["USERNAME"] = getUsername(member)
+                newMember["UUID"] = member
+                newMember["USERNAME"] = getUsername(member)
 
                 
                 newRegion.data["MEMBERS"].append(newMember)
