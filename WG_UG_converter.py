@@ -3,6 +3,7 @@ import uuid
 import requests
 import UG
 import json
+import os
 
 def getUsername(uuid):
     # Just for testing
@@ -12,13 +13,16 @@ def getUsername(uuid):
         jsonDecode = response.json()
         return(jsonDecode["data"]["player"]["username"])
     except:
-        print("Somethin went wrong, can't fetch the username!")
+        print("Something went wrong, can't fetch the username!")
         return -1
 
 
 if __name__== "__main__":
     regions = None
     regionIndex = {}
+
+    os.mkdir("regions")
+
     with open("regions.yml", 'r') as stream:
         try:
             regions = yaml.safe_load(stream)
@@ -56,7 +60,12 @@ if __name__== "__main__":
         # Adding the region owners and members, if there is a parent region in WorldGuard, the "superowners" are also added
         try:
             parent = regions["regions"][region]["parent"]
-
+            try:
+                while True:
+                    newRegion.data["PRIORITY"] = newRegion.data["PRIORITY"] + 1
+                    parent = regions["regions"][parent]["parent"]
+            except:
+                print("No more parents!")
             for superowner in regions["regions"][parent]["owners"]["unique-ids"]:
                 newOner = {  
                 "UUID" : "",
@@ -150,7 +159,7 @@ if __name__== "__main__":
 
         jsonDump = json.dumps(newRegion.data, indent=4)
         fname = newRegion.data["ID"]
-        f = open(f"{fname}.json", "w")
+        f = open(f"regions/{fname}.json", "w")
         f.write(jsonDump)
         f.close()
         
@@ -160,10 +169,3 @@ if __name__== "__main__":
     f = open("index.json", "w")
     f.write(jsonDump)
     f.close()
-
-    print(uuid.uuid1())
-
-
-
-
-# print(regions)
