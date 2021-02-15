@@ -24,7 +24,7 @@ class UG:
             "EFFECTS": [],
             "SOLD": False,
             "VALUE": None,
-            "VERSION": 2.32,
+            "VERSION": 2.33,
             "ID": "",
             "TYPE": "LOCAL",
             "NAME": "",
