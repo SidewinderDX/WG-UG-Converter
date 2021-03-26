@@ -16,15 +16,27 @@ class UG:
                 "world" : "world"
             },
             "PRIORITY" : 0,
-            "TELEPORT_LOCATION" : None,
-            "SPAWN_LOCATION" : None,
+            "TELEPORT_LOCATION" : {
+                "x" : 0,
+                "y" : 0,
+                "z" : 0,
+                "dimension" : "minecraft:overworld",
+                "world" : "world"
+            },
+            "SPAWN_LOCATION" : {
+                "x" : 0,
+                "y" : 0,
+                "z" : 0,
+                "dimension" : "minecraft:overworld",
+                "world" : "world"
+            },
             "MEMBERS" : [],
             "FAREWELL_MESSAGE": "",
             "GREETING_MESSAGE": "",
             "EFFECTS": [],
             "SOLD": False,
             "VALUE": None,
-            "VERSION": 2.33,
+            "VERSION": 2.34,
             "ID": "",
             "TYPE": "LOCAL",
             "NAME": "",
@@ -140,7 +152,7 @@ class UG:
                 },
                 {
                 "name": "endermangrief",
-                "value": True
+                "value": False
                 },
                 {
                 "name": "enderdragonblockdamage",

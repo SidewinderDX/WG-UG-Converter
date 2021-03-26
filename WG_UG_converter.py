@@ -45,6 +45,13 @@ if __name__== "__main__":
         newRegion.data["SECOND_POINT"]["x"] = regions["regions"][region]["max"]["x"]
         newRegion.data["SECOND_POINT"]["y"] = regions["regions"][region]["max"]["y"]
         newRegion.data["SECOND_POINT"]["z"] = regions["regions"][region]["max"]["z"]
+        # TELEPORT AND SPAWN Placeholder
+        newRegion.data["TELEPORT_LOCATION"]["x"] = regions["regions"][region]["min"]["x"]
+        newRegion.data["TELEPORT_LOCATION"]["y"] = regions["regions"][region]["min"]["y"]
+        newRegion.data["TELEPORT_LOCATION"]["z"] = regions["regions"][region]["min"]["z"] 
+        newRegion.data["SPAWN_LOCATION"]["x"] = regions["regions"][region]["max"]["x"]
+        newRegion.data["SPAWN_LOCATION"]["y"] = regions["regions"][region]["max"]["y"]
+        newRegion.data["SPAWN_LOCATION"]["z"] = regions["regions"][region]["max"]["z"]
         # UUID for the region
         newRegion.data["ID"] = str(uuid.uuid1())
         # Greeting/farewell message
